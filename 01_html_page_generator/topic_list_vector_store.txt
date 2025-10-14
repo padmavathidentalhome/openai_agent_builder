@@ -1,0 +1,11 @@
+Query Sample Number,Query Text
+1,Create a personal portfolio website for a graphic designer named Alex Doe. Include sections for 'About Me', 'Portfolio' with image placeholders, and a 'Contact' section with a simple form.
+2,Generate a clean and modern landing page for a new mobile app called 'TaskFlow'. It should have a headline, a brief description, a features list, and a call-to-action button to download the app.
+3,Build a simple blog homepage layout for 'The Wanderer's Journal'. It needs a header with the blog title, a main section for a list of recent blog post summaries with placeholder images, and a footer with social media links.
+4,Create a webpage for a local restaurant, 'The Corner Bistro'. The page should display their dinner menu, categorized into 'Appetizers', 'Main Courses', and 'Desserts', and include the restaurant's address and phone number.
+5,Generate a responsive one-page website for a freelance photographer. The site should have a full-screen background image, a short bio, a gallery section to display photos in a grid, and contact information.
+6,Build a product page for an e-commerce store selling a 'zle'. Include a product image, title, price, a short description, and an 'Add to Cart' button.
+7.Create a 'Coming Soon' page for a new startup. It should have a large heading, a brief teaser about the company, and an email subscription form to notify users upon launch.
+8,Generate an event invitation page for a 'Tech Conference 2025'. The page should include the event title, date, location, a brief agenda, and an RSVP button.
+9,Build a simple documentation page for a software library. It should have a sidebar with a list of navigation links to different topics and a main content area to display the documentation text.
+10,Create a basic professional resume webpage for a software engineer. It should include sections for 'Summary', 'Experience' with a list of past roles, 'Education', and 'Skills'.

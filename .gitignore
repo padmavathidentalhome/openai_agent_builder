@@ -1,0 +1,10 @@
+# Flutter/Dart/Pub related
+.packages
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Other
+*.lock

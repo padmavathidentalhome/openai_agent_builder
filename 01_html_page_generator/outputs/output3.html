@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>TaskFlow — Clean, Modern App
+        Landing Page</title>
+
+    <meta name="description" content="TaskFlow: Organize your day effortlessly with a clean, modern mobile app.
+        Features, screenshots, and download links." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+ <style>
+        
+ :root {
+            
+ --bg: #0b0f14;
+            
+ --surface: #0f1520;
+            
+ --card: #121a26;
+            
+ --text: #e6edf6;
+            
+ --muted: #9fb0c3;
+            
+ --accent: #6ae3ff;
+            
+ --accent-2: #7c5cff;
+            
+ --ok: #19d27e;
+            
+ --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            
+ --radius: 14px;
+            
+ --ring: 0 0 0 3px rgba(122, 92, 255, .25);
+            
+
+        }
+
+        
+ * {
+            box-sizing: border-box;
+        }
+
+        
+ html,
+        body {
+            height: 100%;
+        }
+
+        
+ body {
+            
+ margin: 0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            
+ color: var(--text);
+            background: radial-gradient(1200px 800px at 10% -10%, rgba(124, 92, 255, .25), transparent 60%), radial-gradient(800px 600px at 110% 10%, rgba(106, 227, 255, .18), transparent 60%), var(--bg);
+            
+
+        }
+
+        
+ a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        
+
+
+
+        /* Topic banner */
+        
+ .topic {
+            
+ position: relative;
+            
+ padding: 10px 16px;
+            background: linear-gradient(90deg, rgba(124, 92, 255, .18), rgba(106, 227, 255, .18));
+            
+ color: var(--text);
+            font-size: 13px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            
+
+        }
+
+        
+ .topic b {
+            font-weight: 700;
+        }
+
+        
+ .topic .src {
+            opacity: .8;
+            font-style: italic;
+        }
+
+        
+
+ header {
+            
+ position: sticky;
+            top: 0;
+            z-index: 5;
+            backdrop-filter: blur(10px);
+            
+ background: linear-gradient(180deg, rgba(15, 21, 32, .8), rgba(15, 21, 32, .6) 40%, transparent);
+            
+ border-bottom: 1px solid rgba(255, 255, 255, .06);
+            
+
+        }
+
+        
+
+ .nav {
+            
+ max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            
+
+        }
+
+        
+ .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        
+ .logo {
+            
+ width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-2), var(--accent));
+            box-shadow: 0 8px 20px rgba(124, 92, 255, .45);
+            
+
+        }
+
+        
+ .brand h1 {
+            font-size: 18px;
+            margin: 0;
+            letter-spacing: .3px;
+        }
+
+        
+ .nav a.btn-ghost {
+            
+ padding: 10px 14px;
+            border-radius: 10px;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, .12);
+            
+
+        }
+
+        
+
+ .hero {
+            
+ max-width: 1120px;
+            margin: 32px auto 28px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 28px;
+            align-items: center;
+            
+
+        }
+
+        
+ @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        
+
+ .hero-copy h2 {
+            font-size: clamp(32px, 5vw, 54px);
+            line-height: 1.05;
+            margin: 6px 0 10px;
+        }
+
+        
+ .gradient-text {
+            
+ background: linear-gradient(90deg, #c2b3ff, #6ae3ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            
+
+        }
+
+        
+ .hero-copy p {
+            color: var(--muted);
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0 0 22px;
+        }
+
+        
+
+ .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        
+ .btn-primary {
+            
+ background: linear-gradient(135deg, var(--accent-2), var(--accent));
+            color: #0b0f14;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            
+ padding: 14px 18px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            
+
+        }
+
+        
+ .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, .14);
+            padding: 12px 16px;
+            border-radius: 12px;
+        }
+
+        
+ .tiny {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        
+
+ .phone-wrap {
+            
+ width: 100%;
+            display: grid;
+            place-items: center;
+            
+
+        }
+
+        
+ .phone {
+            
+ width: min(370px, 90%);
+            aspect-ratio: 9/19;
+            border-radius: 34px;
+            padding: 18px;
+            background: linear-gradient(180deg, #1a2331, #0e1521);
+            
+ border: 2px solid rgba(255, 255, 255, .08);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .55), inset 0 0 0 8px #0b0f14;
+            position: relative;
+            overflow: hidden;
+            
+
+        }
+
+        
+ .phone-notch {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36%;
+            height: 18px;
+            background: #0b0f14;
+            border-radius: 12px;
+        }
+
+        
+ .screen {
+            position: absolute;
+            inset: 16px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: radial-gradient(600px 400px at 10% -10%, rgba(124, 92, 255, .3), transparent 50%), #0f1520;
+        }
+
+        
+ .screen .header {
+            padding: 18px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        
+ .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #19d27e;
+            box-shadow: 0 0 0 6px rgba(25, 210, 126, .15);
+        }
+
+        
+ .app-title {
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        
+ .tasks {
+            padding: 0 16px 16px;
+            display: grid;
+            gap: 10px;
+        }
+
+        
+ .task {
+            
+ background: #121a26;
+            border: 1px solid rgba(255, 255, 255, .06);
+            padding: 12px 12px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+
+        }
+
+        
+ .task .label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        
+ .checkbox {
+            width: 18px;
+            height: 18px;
+            border-radius: 6px;
+            border: 1.5px solid rgba(255, 255, 255, .35);
+            display: grid;
+            place-items: center;
+        }
+
+        
+ .checkbox .check {
+            width: 12px;
+            height: 12px;
+            border-radius: 4px;
+            background: linear-gradient(135deg, var(--accent-2), var(--accent));
+            opacity: 0;
+            transform: scale(.7);
+            transition: .18s ease;
+        }
+
+        
+ .task.done .checkbox .check {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        
+ .pill {
+            font-size: 12px;
+            color: #0b0f14;
+            background: linear-gradient(135deg, #6ae3ff, #7c5cff);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 700;
+        }
+
+        
+
+ .feature-section {
+            max-width: 1120px;
+            margin: 18px auto 0;
+            padding: 0 20px 10px;
+        }
+
+        
+ .section-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 10px 0 14px;
+        }
+
+        
+ .section-head h3 {
+            margin: 0;
+            font-size: 22px;
+            letter-spacing: .2px;
+        }
+
+        
+ .grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        
+ @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        
+ @media (max-width: 620px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        
+
+ .card {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: var(--radius);
+            padding: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        
+ .card h4 {
+            margin: 0 0 6px;
+            font-size: 16px;
+        }
+
+        
+ .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        
+
+ .download {
+            
+ max-width: 1120px;
+            margin: 26px auto 40px;
+            padding: 0 20px;
+            display: grid;
+            gap: 18px;
+            grid-template-columns: 1fr .9fr;
+            align-items: center;
+            
+
+        }
+
+        
+ @media (max-width: 900px) {
+            .download {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        
+ .dl-card {
+            background: linear-gradient(135deg, rgba(124, 92, 255, .18), rgba(106, 227, 255, .18));
+            border: 1px solid rgba(255, 255, 255, .12);
+            padding: 20px;
+            border-radius: var(--radius);
+        }
+
+        
+ .store-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        
+ .store {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            background: #0f1520;
+            border: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        
+ .store svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        
+
+ footer {
+            max-width: 1120px;
+            margin: 28px auto 24px;
+            padding: 0 20px;
+            color: var(--muted);
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        
+ .sep {
+            opacity: .35;
+        }
+
+        
+
+
+
+        /* Toast */
+        
+ .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 14px;
+            background: #0f1520;
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 12px;
+            display: none;
+            box-shadow: var(--shadow);
+        }
+
+        
+ .toast.show {
+            display: block;
+            animation: floatUp .6s ease;
+        }
+
+        
+ @keyframes floatUp {
+            from {
+                transform: translateY(10px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        
+
+
+
+        /* Focus styles */
+        
+ .btn-primary:focus,
+        .btn-secondary:focus,
+        .store:focus,
+        .nav a.btn-ghost:focus {
+            outline: none;
+            box-shadow: var(--ring);
+        }
+
+        
+
+    </style>
+
+</head>
+
+
+<body>
+ <!-- Topic mention and source citation -->
+ <div class="topic">
+ <b>Topic:</b> Generate a clean and modern
+        landing page for a new mobile app called 'TaskFlow'. It should have a headline, a brief description, a features
+        list, and a call-to-action button to download the app. <span class="src">Source: topic_list_vector_store.txt
+        </span>
+ </div>
+
+ <header>
+ <nav class="nav" aria-label="Primary">
+ <div class="brand">
+ <div
+                    class="logo" aria-hidden="true"></div>
+ <h1>TaskFlow</h1>
+ </div>
+ <div style="display:flex;
+                gap:10px; align-items:center;">
+ <a class="btn-ghost" href="#features">Features</a>
+ <a
+                    class="btn-ghost" href="#download">Download</a>
+ </div>
+ </nav>
+ </header>
+
+ <main>
+
+        <section class="hero">
+ <div class="hero-copy">
+ <h2>Organize your day <span
+                        class="gradient-text">effortlessly</span>.</h2>
+ <p>TaskFlow helps you capture tasks in
+                    seconds, focus on what matters, and hit your goals without the chaos. Fast. Delightful. Private.</p>
+                
+ <div class="cta-row">
+ <button class="btn-primary" id="primaryCta" aria-label="Download
+                        TaskFlow now">Download TaskFlow</button>
+ <a class="btn-secondary"
+                        href="#features">Explore features</a>
+ </div>
+ <p class="tiny">No signup required. Works
+                    offline. Sync when you want.</p>
+ </div>
+ <div class="phone-wrap" aria-hidden="true">
+ <div
+                    class="phone">
+ <div class="phone-notch"></div>
+ <div class="screen">
+ <div
+                            class="header">
+ <span class="app-title">TaskFlow</span>
+ <span class="dot"
+                                title="All systems go"></span>
+ </div>
+ <div class="tasks" id="demoTasks">
+
+                            <div class="task">
+ <div class="label">
+                                    <div class="checkbox">
+                                        <div class="check"></div>
+                                    </div>Morning planning
+                                </div>
+ <span class="pill">Today</span>
+ </div>
+ <div class="task">
+ <div
+                                    class="label">
+                                    <div class="checkbox">
+                                        <div class="check"></div>
+                                    </div>Design review @ 2pm
+                                </div>
+ <span class="pill">Work</span>
+ </div>
+ <div class="task">
+ <div
+                                    class="label">
+                                    <div class="checkbox">
+                                        <div class="check"></div>
+                                    </div>Pick up groceries
+                                </div>
+ <span class="pill">Errands</span>
+ </div>
+ <div class="task">
+ <div
+                                    class="label">
+                                    <div class="checkbox">
+                                        <div class="check"></div>
+                                    </div>Gym session
+                                </div>
+ <span class="pill">Health</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+            
+ </section>
+
+ <section class="feature-section" id="features">
+ <div class="section-head">
+ <h3>
+                    Why TaskFlow?</h3>
+ <span class="tiny">Built for speed, clarity, and focus.</span>
+ </div>
+
+            <div class="grid">
+ <article class="card">
+ <h4>Smart Lists</h4>
+ <p>Automatic Today, Upcoming, and
+                        Focus views to see exactly what matters.</p>
+ </article>
+ <article class="card">
+ <h4>Quick
+                        Capture</h4>
+ <p>Add tasks from anywhere with one tap or a voice snippet.</p>
+ </article>
+
+                <article class="card">
+ <h4>Calendar Sync</h4>
+ <p>Two-way sync with your favorite calendars so
+                        events and tasks stay aligned.</p>
+ </article>
+ <article class="card">
+ <h4>Workspaces</h4>
+                    
+ <p>Switch contexts instantly—Personal, Work, or custom spaces with separate notifications.</p>
+
+                </article>
+ <article class="card">
+ <h4>Collaboration</h4>
+ <p>Share lists, assign tasks, and get
+                        updates without email overload.</p>
+ </article>
+ <article class="card">
+ <h4>Privacy-first
+                    </h4>
+ <p>Local-first storage with optional encrypted sync you control.</p>
+ </article>
+ </div>
+
+        </section>
+
+ <section class="download" id="download">
+ <div class="dl-card">
+ <h3 style="margin:0 0
+                    8px;">Get TaskFlow</h3>
+ <p class="tiny" style="margin:0 0 14px;">Free to try. Premium
+                    features available with TaskFlow Pro.</p>
+ <div class="store-buttons">
+ <a href="#"
+                        class="store" aria-label="Download on the App Store" onclick="fakeDownload(event, 'iOS'
+                        )">
+ <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M17.24 18.9c-.73 1.08-1.53 2.15-2.76 2.17-1.21.02-1.6-.7-2.98-.7s-1.8.68-3
+                                .7c-1.23.02-2.17-1.17-2.9-2.25-1.58-2.3-2.8-6.49-1.17-9.34.82-1.42 2.28-2.33 3.89-2.36
+                                1.22-.02 2.37.79 2.98.79.6 0 1.85-.98 3.12-.84.53.02 2.02.22 2.97 1.66-.08.05-1.77
+                                1.02-1.75 3 .02 2.38 2.05 3.18 2.07 3.19-.02.05-.33 1.15-1.47 2.28Z" />
+                            <path d="M14.86 3.32c.66-.78 1.11-1.88.99-2.99-1.03.07-2.26.74-2.97 1.61-.65.77-1.16
+                                1.85-1.02 2.94 1.12.08 2.25-.56 3-1.56Z" />
+                        </svg>
+ <span>App Store</span>
+ </a>
+ <a href="#" class="store" aria-label="Get it on
+                        Google Play" onclick="fakeDownload(event, 'Android' )">
+ <svg viewBox="0 0 24 24"
+                            fill="currentColor" aria-hidden="true">
+                            <path d="M3 5.5v13c0 .41.24.78.62.94l9.13-7.44L3.62 4.56A1.03 1.03 0 0 0 3 5.5Zm10.9 6.5
+                                2.5-2.04-8.2-6.69c-.06-.05-.13-.08-.2-.1l5.9 8.83ZM20.38 4.56 15.9 8.23 18.4
+                                10.25l2.98-2.43c.12-.1.2-.26.2-.42v-1.9c0-.8-.92-1.25-1.2-1.0ZM15.9 15.77l4.48
+                                3.67c.28-.1.62-.45.62-.94v-1.9c0-.16-.07-.31-.2-.42l-2.97-2.43-1.93 1.57Z" />
+                        </svg>
+ <span>Google Play</span>
+ </a>
+ </div>
+ </div>
+ <div class="card"
+                style="min-height: 160px; display:grid; align-content:center;">
+ <h4 style="margin:0 0 6px;">What
+                    users say</h4>
+ <p style="margin:0 0 6px;">“TaskFlow made my day feel calm again. The Focus view
+                    is pure magic.” — Jamie R.</p>
+ <p style="margin:0;">“The offline-first approach means it works
+                    wherever I am.” — Priya K.</p>
+ </div>
+ </section>
+ </main>
+
+ <footer>
+ <div>© <span
+                id="year"></span> TaskFlow</div>
+ <div class="sep">•</div>
+ <div>Privacy • Terms • Support</div>
+
+    </footer>
+
+ <div class="toast" role="status" aria-live="polite" id="toast">Preparing your download…</div>
+    
+
+
+    <script>
+    const year = document.getElementById('year'); 
+    year.textContent = new Date().getFullYear(); 
+
+    function fakeDownload(e, platform) { 
+      e.preventDefault(); 
+      const t = document.getElementById('toast'); 
+      t.textContent = `Starting ${platform} download…`; 
+      t.classList.add('show'); 
+      setTimeout(() => { t.textContent = 'Download ready!'; }, 900); 
+      setTimeout(() => { t.classList.remove('show'); }, 2200); 
+ } 
+
+    document.getElementById('primaryCta').addEventListener('click', (e) => fakeDownload(e, 'universal')); 
+
+    // Demo: toggle task completion
+    const tasks = document.querySelectorAll('.task');
+    tasks.forEach((task) => {
+      task.addEventListener('click', () => task.classList.toggle('done'));
+    });
+  </script>
+    
+
+</body>
+
+
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Water Bottle — Product Page</title>
+    <meta name="description"
+        content="Product page for a Smart Water Bottle with features, price, and add to cart functionality." />
+    <style>
+        :root {
+            --bg: #0f1220;
+            --panel: #14182b;
+            --soft: #1b2140;
+            --text: #eaf0ff;
+            --muted: #b5c1e1;
+            --brand: #6ee7ff;
+            --brand-2: #8ef5c8;
+            --accent: #7c83ff;
+            --danger: #ff6b6b;
+            --shadow: 0 10px 30px rgba(4, 10, 40, .35);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            background: radial-gradient(1200px 600px at 80% -20%, #27306a22, transparent), radial-gradient(900px 500px at -10% 120%, #12b6e622, transparent), var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit
+        }
+
+        .topic-banner {
+            width: 100%;
+            background: linear-gradient(90deg, #2b2f55, #2f2a5e 40%, #1c2d47);
+            color: #dfe6ff;
+            padding: .6rem 1rem;
+            font-size: .9rem;
+            text-align: center;
+            border-bottom: 1px solid #2b315a;
+        }
+
+        .topic-banner strong {
+            color: #ffffff
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: saturate(1.2) blur(6px);
+            background: linear-gradient(to bottom, rgba(11, 16, 36, .8), rgba(11, 16, 36, .55));
+            border-bottom: 1px solid #1f2547;
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .9rem 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-weight: 800;
+            letter-spacing: .3px
+        }
+
+        .brand .logo {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: conic-gradient(from 180deg, var(--brand), var(--accent), var(--brand-2), var(--brand));
+            box-shadow: 0 6px 18px rgba(110, 231, 255, .35)
+        }
+
+        .brand span {
+            font-size: 1.05rem
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: .75rem
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            background: var(--soft);
+            padding: .4rem .65rem;
+            border-radius: 999px;
+            border: 1px solid #263063
+        }
+
+        .pill svg {
+            width: 18px;
+            height: 18px
+        }
+
+        .badge {
+            min-width: 20px;
+            height: 20px;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            font-size: .8rem;
+            display: inline-grid;
+            place-items: center;
+            border-radius: 999px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem 4rem
+        }
+
+        .product {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        @media (max-width: 900px) {
+            .product {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: linear-gradient(180deg, #171c35, #121731);
+            border: 1px solid #222a55;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .visual {
+            position: relative;
+            padding: 1rem;
+        }
+
+        .visual-inner {
+            height: 100%;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            border-radius: calc(var(--radius) - 8px);
+            background: radial-gradient(600px 300px at 20% 20%, #2d3867aa, transparent 60%), radial-gradient(500px 300px at 90% 80%, #1e4d71aa, transparent 60%), #0f1431;
+            border: 1px solid #283166
+        }
+
+        figure {
+            margin: 0;
+            width: 100%;
+        }
+
+        .hero-svg {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            display: block
+        }
+
+        .details {
+            padding: 1.25rem 1.25rem 1.5rem
+        }
+
+        .title {
+            font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.4rem);
+            margin: 0 0 .4rem;
+            font-weight: 900;
+            letter-spacing: .2px
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 1rem;
+            font-size: .98rem
+        }
+
+        .price-row {
+            display: flex;
+            align-items: end;
+            gap: 1rem;
+            margin: .6rem 0 1.1rem
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: .5px
+        }
+
+        .price .cur {
+            font-size: 1rem;
+            opacity: .85;
+            margin-right: .15rem
+        }
+
+        .old {
+            color: #8da2e3;
+            text-decoration: line-through;
+            font-size: 1rem
+        }
+
+        .badge-save {
+            background: linear-gradient(90deg, #00c2ff, #5cffc8);
+            color: #00122b;
+            font-weight: 800;
+            padding: .25rem .55rem;
+            border-radius: 6px;
+            font-size: .78rem;
+            border: 1px solid rgba(255, 255, 255, .25)
+        }
+
+        .desc {
+            color: #d3dcff;
+            margin: 1rem 0 1.25rem;
+        }
+
+        .bullets {
+            display: grid;
+            gap: .45rem;
+            margin: .75rem 0 1.2rem;
+            color: #c9d4ff
+        }
+
+        .bullets li {
+            list-style: none;
+            display: flex;
+            align-items: flex-start;
+            gap: .55rem
+        }
+
+        .bullets svg {
+            flex: 0 0 18px;
+            margin-top: .15rem
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            flex-wrap: wrap;
+            margin-top: .5rem
+        }
+
+        .qty {
+            display: inline-flex;
+            align-items: center;
+            gap: .25rem;
+            background: var(--soft);
+            border: 1px solid #2b356e;
+            border-radius: 10px;
+            padding: .35rem;
+            height: 42px;
+        }
+
+        .qty button {
+            all: unset;
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            color: #cfe2ff;
+            border-radius: 8px
+        }
+
+        .qty button:hover {
+            background: #253062
+        }
+
+        .qty input {
+            width: 50px;
+            text-align: center;
+            background: transparent;
+            border: 0;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .85rem 1.1rem;
+            border-radius: 12px;
+            font-weight: 900;
+            letter-spacing: .3px;
+            cursor: pointer;
+            border: 1px solid #2c3673;
+            color: #06122f;
+            background: linear-gradient(180deg, #7bf0ff, #5dd7ff 60%, #75f7d7);
+            box-shadow: 0 10px 24px rgba(95, 235, 255, .28), inset 0 1px 0 rgba(255, 255, 255, .5);
+            transition: transform .05s ease, box-shadow .2s ease;
+        }
+
+        .cta:hover {
+            box-shadow: 0 14px 30px rgba(95, 235, 255, .35), inset 0 1px 0 rgba(255, 255, 255, .6)
+        }
+
+        .cta:active {
+            transform: translateY(1px)
+        }
+
+        .cta svg {
+            width: 18px;
+            height: 18px
+        }
+
+        .social-proof {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin: .75rem 0 1.1rem
+        }
+
+        .stars {
+            display: inline-flex;
+            gap: 2px
+        }
+
+        .stars svg {
+            width: 18px;
+            height: 18px;
+            fill: #ffd76b
+        }
+
+        .reviews {
+            color: #b8c6f2;
+            font-size: .9rem
+        }
+
+        .swatches {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            margin: .3rem 0 1rem
+        }
+
+        .swatch {
+            position: relative
+        }
+
+        .swatch input {
+            position: absolute;
+            inset: 0;
+            opacity: 0
+        }
+
+        .swatch .dot {
+            width: 26px;
+            height: 26px;
+            border-radius: 999px;
+            border: 2px solid #1d2550;
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .15)
+        }
+
+        .swatch input:focus-visible+.dot {
+            outline: 2px solid #7bf0ff;
+            outline-offset: 2px
+        }
+
+        .swatch input:checked+.dot {
+            box-shadow: 0 0 0 3px #7bf0ff55, inset 0 0 0 2px rgba(255, 255, 255, .6)
+        }
+
+        footer {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 1.25rem 1rem;
+            color: #a8b5df;
+            border-top: 1px solid #232a55
+        }
+
+        .toast {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            background: #0e1536;
+            color: #e9f1ff;
+            border: 1px solid #2a376f;
+            padding: .8rem 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            transform: translateY(30px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .25s ease
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1
+        }
+
+        /* Accessibility tweaks */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topic-banner">
+        <strong>Topic:</strong> Build a product page for an e-commerce store selling a 'Smart Water Bottle'.
+    </div>
+    <header>
+        <nav class="nav" aria-label="Primary">
+            <div class="brand" aria-label="Store Home">
+                <div class="logo" aria-hidden="true"></div>
+                <span>HydraSmart</span>
+            </div>
+            <div class="cart">
+                <div class="pill" aria-live="polite" aria-atomic="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 12.39A2 2 0 0 0 9.62 15H19a2 2 0 0 0 2-1.72L23 6H6"></path>
+                    </svg>
+                    <span>Cart</span>
+                    <span class="badge" id="cartCount" aria-label="items in cart">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product" aria-labelledby="product-title">
+            <div class="panel visual">
+                <div class="visual-inner">
+                    <figure>
+                        <svg class="hero-svg" viewBox="0 0 800 800" role="img" aria-labelledby="imgTitle imgDesc">
+                            <title id="imgTitle">Smart Water Bottle</title>
+                            <desc id="imgDesc">Stylized illustration of a sleek smart water bottle with glowing accents.
+                            </desc>
+                            <defs>
+                                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#0b163b" />
+                                    <stop offset="60%" stop-color="#10234e" />
+                                    <stop offset="100%" stop-color="#0a1433" />
+                                </linearGradient>
+                                <radialGradient id="glow" cx="50%" cy="20%" r="60%">
+                                    <stop offset="0%" stop-color="#8ef5ff" stop-opacity=".4" />
+                                    <stop offset="80%" stop-color="#8ef5ff" stop-opacity="0" />
+                                </radialGradient>
+                                <linearGradient id="bottleGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#6ee7ff" />
+                                    <stop offset="100%" stop-color="#63ffd1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="800" height="800" fill="url(#g1)" />
+                            <ellipse cx="400" cy="640" rx="220" ry="36" fill="#000" opacity=".35" />
+                            <circle cx="400" cy="200" r="260" fill="url(#glow)" />
+                            <!-- Bottle Body -->
+                            <g transform="translate(320,160)">
+                                <rect x="-30" y="0" width="220" height="420" rx="48" fill="#0e1a44" stroke="#2a6fff"
+                                    stroke-opacity=".35" />
+                                <rect x="-24" y="10" width="208" height="400" rx="44" fill="#0f1f55" />
+                                <!-- Hydration ring -->
+                                <rect x="-20" y="175" width="200" height="16" rx="8" fill="url(#bottleGrad)" />
+                                <!-- Cap -->
+                                <rect x="20" y="-40" width="120" height="60" rx="16" fill="#0f1f55" stroke="#2a6fff"
+                                    stroke-opacity=".35" />
+                                <rect x="40" y="-54" width="80" height="22" rx="10" fill="url(#bottleGrad)" />
+                            </g>
+                            <!-- UI dots -->
+                            <g fill="#7bf0ff" opacity=".75">
+                                <circle cx="140" cy="150" r="4" />
+                                <circle cx="660" cy="210" r="3" />
+                                <circle cx="700" cy="150" r="2.5" />
+                                <circle cx="120" cy="620" r="2.5" />
+                            </g>
+                            <text x="50%" y="745" text-anchor="middle" fill="#a8c7ff" font-size="20"
+                                opacity=".5">HydraSmart Series</text>
+                        </svg>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="panel details">
+                <h1 id="product-title" class="title">Smart Water Bottle</h1>
+                <p class="subtitle">Stay hydrated the smart way — track intake, glow reminders, and keep water at the
+                    perfect temperature.</p>
+
+                <div class="social-proof" aria-label="Customer rating">
+                    <div class="stars" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.401 8.161L12 18.896l-7.335 3.862 1.401-8.161L.132 9.21l8.2-1.192z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.401 8.161L12 18.896l-7.335 3.862 1.401-8.161L.132 9.21l8.2-1.192z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.401 8.161L12 18.896l-7.335 3.862 1.401-8.161L.132 9.21l8.2-1.192z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.401 8.161L12 18.896l-7.335 3.862 1.401-8.161L.132 9.21l8.2-1.192z" />
+                        </svg>
+                        <svg viewBox="0 0 24 24" style="opacity:.4">
+                            <path
+                                d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.401 8.161L12 18.896l-7.335 3.862 1.401-8.161L.132 9.21l8.2-1.192z" />
+                        </svg>
+                    </div>
+                    <div class="reviews">4.0 (1,248 reviews)</div>
+                </div>
+
+                <div class="price-row" aria-label="Pricing">
+                    <div class="price"><span class="cur">$</span><span id="price">49.99</span></div>
+                    <div class="old">$69.99</div>
+                    <span class="badge-save" aria-label="You save twenty dollars">Save $20</span>
+                </div>
+
+                <p class="desc">HydraSmart syncs with your phone to log every sip, lights up when it’s time to drink,
+                    and keeps beverages cold up to 24h or hot up to 12h. Spill-proof, USB-C rechargeable, and built with
+                    eco-friendly stainless steel.</p>
+
+                <div>
+                    <div class="swatches" role="radiogroup" aria-label="Choose color">
+                        <span class="sr-only" id="color-label">Color</span>
+                        <label class="swatch" aria-labelledby="color-label">
+                            <input type="radio" name="color" value="Ocean" checked />
+                            <span class="dot" title="Ocean"
+                                style="background: radial-gradient(#5be9ff, #2972ff)"></span>
+                        </label>
+                        <label class="swatch" aria-labelledby="color-label">
+                            <input type="radio" name="color" value="Midnight" />
+                            <span class="dot" title="Midnight"
+                                style="background: radial-gradient(#7a80ff, #2a2f6b)"></span>
+                        </label>
+                        <label class="swatch" aria-labelledby="color-label">
+                            <input type="radio" name="color" value="Mint" />
+                            <span class="dot" title="Mint" style="background: radial-gradient(#a0ffd9, #22d3a6)"></span>
+                        </label>
+                    </div>
+
+                    <ul class="bullets" aria-label="Key features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#7bf0ff" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Real-time hydration tracking with reminders
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#7bf0ff" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Vacuum insulated: 24h cold, 12h hot
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#7bf0ff" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            BPA-free stainless steel, 600ml
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#7bf0ff" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            USB-C fast charge, 20-day battery
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="controls">
+                    <div class="qty" aria-label="Quantity selector">
+                        <button id="decQty" aria-label="Decrease quantity">–</button>
+                        <input id="qty" inputmode="numeric" pattern="[0-9]*" aria-label="Quantity" value="1" />
+                        <button id="incQty" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button class="cta" id="addToCart">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#06122f" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 12.39A2 2 0 0 0 9.62 15H19a2 2 0 0 0 2-1.72L23 6H6"></path>
+                        </svg>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> HydraSmart. Secure payments. Free returns within 30 days.</p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7bf0ff" stroke-width="2"
+            style="flex:0 0 20px">
+            <path d="M20 6L9 17l-5-5" />
+        </svg>
+        <span id="toastText">Added to cart</span>
+    </div>
+
+    <script>
+        const qtyInput = document.getElementById('qty');
+        const incBtn = document.getElementById('incQty');
+        const decBtn = document.getElementById('decQty');
+        const addBtn = document.getElementById('addToCart');
+        const cartCount = document.getElementById('cartCount');
+        const toast = document.getElementById('toast');
+        const toastText = document.getElementById('toastText');
+
+        const clampQty = (val) => {
+            const n = Math.max(1, Math.min(99, parseInt(val, 10) || 1));
+            return n;
+        };
+
+        const showToast = (msg) => {
+            toastText.textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(showToast._t);
+            showToast._t = setTimeout(() => toast.classList.remove('show'), 1800);
+        };
+
+        incBtn.addEventListener('click', () => {
+            qtyInput.value = clampQty((+qtyInput.value || 1) + 1);
+        });
+        decBtn.addEventListener('click', () => {
+            qtyInput.value = clampQty((+qtyInput.value || 1) - 1);
+        });
+
+        qtyInput.addEventListener('input', () => {
+            qtyInput.value = qtyInput.value.replace(/[^0-9]/g, '').slice(0, 2);
+        });
+        qtyInput.addEventListener('blur', () => {
+            qtyInput.value = clampQty(qtyInput.value);
+        });
+
+        addBtn.addEventListener('click', () => {
+            const qty = clampQty(qtyInput.value);
+            const cur = parseInt(cartCount.textContent, 10) || 0;
+            const next = cur + qty;
+            cartCount.textContent = next;
+            addBtn.animate([
+                { transform: 'translateY(0)' },
+                { transform: 'translateY(-2px)' },
+                { transform: 'translateY(0)' }
+            ], { duration: 180, easing: 'ease-out' });
+            showToast(`${qty} item${qty > 1 ? 's' : ''} added to cart`);
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Keyboard accessibility: Enter to add, arrow keys for qty
+        qtyInput.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') { e.preventDefault(); incBtn.click(); }
+            if (e.key === 'ArrowDown') { e.preventDefault(); decBtn.click(); }
+        });
+    </script>
+</body>
+
+</html>
