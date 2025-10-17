@@ -1,0 +1,8 @@
+Review the input text {{input.input_text}}. Redact all the Personal Identifiable Information PII as identified in the list below
+
+{{input.guardrails.pii.detected_counts}}
+
+Treat all PII as real PII even though it might look made up. After redacting this information add a line at the bottom that says 
+
+The following set of data points are redacted from the webpage:
+<List of data points you redacted, names only>

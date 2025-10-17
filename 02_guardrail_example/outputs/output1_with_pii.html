@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>John | AI App Developer
+        Portfolio</title>
+
+    <meta name="description" content="John is an AI-focused app developer building intelligent apps for Web, iOS, and
+        Android with chatbots and agent integrations." />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+ <style>
+        
+ :root {
+            
+ --bg: #0b0f14;
+            
+ --bg-elev: #0f1520;
+            
+ --panel: #121a26;
+            
+ --text: #e6f0ff;
+            
+ --muted: #9bb3d1;
+            
+ --brand: #7c5cff;
+            
+ --brand-2: #22d3ee;
+            
+ --accent: #16a34a;
+            
+ --warning: #f59e0b;
+            
+ --danger: #ef4444;
+            
+ --ring: 0 0 0 8px rgba(124, 92, 255, .1);
+            
+ --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            
+ --radius: 16px;
+            
+
+        }
+
+        
+
+ [data-theme="light"] {
+            
+ --bg: #f7fbff;
+            
+ --bg-elev: #ffffff;
+            
+ --panel: #f0f6ff;
+            
+ --text: #0b1220;
+            
+ --muted: #4a5c75;
+            
+ --brand: #5b34ff;
+            
+ --brand-2: #06b6d4;
+            
+ --accent: #059669;
+            
+ --warning: #b45309;
+            
+ --danger: #b91c1c;
+            
+ --shadow: 0 10px 30px rgba(2, 6, 23, .12);
+            
+
+        }
+
+        
+
+ * {
+            box-sizing: border-box
+        }
+
+        
+ html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+        }
+
+        
+ a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        
+ img {
+            max-width: 100%;
+            display: block
+        }
+
+        
+
+ .container {
+            width: min(1200px, 94vw);
+            margin-inline: auto
+        }
+
+        
+
+ header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: linear-gradient(180deg, rgba(11, 15, 20, .75), rgba(11, 15, 20, 0));
+            backdrop-filter: saturate(140%) blur(8px)
+        }
+
+        
+ .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0
+        }
+
+        
+ .logo {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        
+ .logo-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: radial-gradient(120px 60px at 20% 20%, var(--brand), transparent), radial-gradient(120px 60px at 80% 80%, var(--brand-2), transparent), linear-gradient(135deg, var(--panel), var(--bg-elev));
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06), var(--shadow)
+        }
+
+        
+ .logo h1 {
+            font-size: 18px;
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: .4px
+        }
+
+        
+ .navlinks {
+            display: flex;
+            gap: 18px;
+            align-items: center
+        }
+
+        
+ .navlinks a {
+            padding: 8px 12px;
+            border-radius: 10px;
+            color: var(--muted)
+        }
+
+        
+ .navlinks a:hover {
+            color: var(--text);
+            background: rgba(124, 92, 255, .12)
+        }
+
+        
+ .btn {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(124, 92, 255, .35);
+            background: linear-gradient(180deg, rgba(124, 92, 255, .15), rgba(124, 92, 255, .05));
+            color: var(--text);
+            box-shadow: var(--shadow)
+        }
+
+        
+ .btn:hover {
+            transform: translateY(-1px);
+            filter: saturate(120%)
+        }
+
+        
+ .btn-ghost {
+            border: 1px solid rgba(255, 255, 255, .18);
+            background: transparent;
+            box-shadow: none
+        }
+
+        
+
+ .theme-toggle {
+            border: none;
+            background: transparent;
+            padding: 8px;
+            border-radius: 10px;
+            color: var(--text);
+            cursor: pointer
+        }
+
+        
+ .theme-toggle:hover {
+            background: rgba(124, 92, 255, .12)
+        }
+
+        
+
+
+
+        /* Hero */
+        
+ .hero {
+            padding: 64px 0 32px
+        }
+
+        
+ .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 36px;
+            align-items: center
+        }
+
+        
+ .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(34, 211, 238, .12);
+            color: var(--brand-2);
+            font-weight: 600;
+            font-size: 12px;
+            border: 1px solid rgba(34, 211, 238, .3)
+        }
+
+        
+ h2.big {
+            font-size: 48px;
+            line-height: 1.05;
+            margin: 16px 0 10px;
+            letter-spacing: -.02em
+        }
+
+        
+ .grad {
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        
+ .subtitle {
+            color: var(--muted);
+            font-size: 18px
+        }
+
+        
+ .hero-cta {
+            display: flex;
+            gap: 12px;
+            margin-top: 22px;
+            flex-wrap: wrap
+        }
+
+        
+
+ .stats {
+            display: flex;
+            gap: 22px;
+            margin-top: 26px;
+            flex-wrap: wrap
+        }
+
+        
+ .stat {
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        
+ .stat strong {
+            font-size: 20px
+        }
+
+        
+
+ .hero-card {
+            position: relative;
+            padding: 22px;
+            border-radius: 18px;
+            background: radial-gradient(600px 260px at 10% -20%, rgba(124, 92, 255, .22), transparent), radial-gradient(600px 260px at 100% 120%, rgba(34, 211, 238, .18), transparent), var(--panel);
+            border: 1px solid rgba(255, 255, 255, .06);
+            box-shadow: var(--shadow);
+            overflow: hidden
+        }
+
+        
+ .hero-card .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px
+        }
+
+        
+ .chip {
+            font-size: 12px;
+            padding: 6px 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: var(--muted)
+        }
+
+        
+ .stack {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 8px
+        }
+
+        
+ .phone {
+            position: absolute;
+            right: 16px;
+            bottom: -10px;
+            width: 160px;
+            height: 320px;
+            border-radius: 24px;
+            background: linear-gradient(160deg, #000 0%, #0b0f14 60%);
+            border: 1px solid rgba(255, 255, 255, .1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .6);
+            overflow: hidden
+        }
+
+        
+ .phone-notch {
+            height: 28px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, 0));
+            border-bottom: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        
+ .chat {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        
+ .bubble {
+            max-width: 84%;
+            padding: 8px 10px;
+            border-radius: 12px;
+            font-size: 12px
+        }
+
+        
+ .ai {
+            align-self: flex-start;
+            background: rgba(124, 92, 255, .2);
+            border: 1px solid rgba(124, 92, 255, .45)
+        }
+
+        
+ .user {
+            align-self: flex-end;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        
+
+
+
+        /* Section */
+        
+ section {
+            padding: 64px 0
+        }
+
+        
+ .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            margin-bottom: 24px
+        }
+
+        
+ .section-head h3 {
+            margin: 0;
+            font-size: 28px
+        }
+
+        
+ .section-desc {
+            color: var(--muted);
+            max-width: 760px
+        }
+
+        
+
+
+
+        /* Skills */
+        
+ .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        
+ .card {
+            padding: 18px;
+            border-radius: 16px;
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, .06);
+            box-shadow: var(--shadow)
+        }
+
+        
+ .card h4 {
+            margin: 0 0 8px
+        }
+
+        
+ .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(124, 92, 255, .12);
+            color: var(--text);
+            border: 1px solid rgba(124, 92, 255, .3);
+            font-size: 12px
+        }
+
+        
+ .list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px
+        }
+
+        
+
+
+
+        /* Projects */
+        
+ .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        
+ .filter {
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer
+        }
+
+        
+ .filter.active {
+            background: rgba(124, 92, 255, .18);
+            border-color: rgba(124, 92, 255, .45);
+            color: var(--text)
+        }
+
+        
+
+ .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        
+ .project {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, .06);
+            display: flex;
+            flex-direction: column
+        }
+
+        
+ .thumb {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, rgba(124, 92, 255, .25), rgba(34, 211, 238, .25));
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        
+ .thumb svg {
+            opacity: .9
+        }
+
+        
+ .project .content {
+            padding: 14px
+        }
+
+        
+ .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        
+ .tag {
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .06);
+            color: var(--muted);
+            border: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        
+ .project .actions {
+            display: flex;
+            gap: 10px;
+            padding: 14px
+        }
+
+        
+ .link {
+            padding: 8px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, .14)
+        }
+
+        
+
+
+
+        /* Testimonials */
+        
+ .testis {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        
+ .testi {
+            padding: 18px;
+            border-radius: 16px;
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        
+ .testi .who {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            color: var(--muted)
+        }
+
+        
+
+
+
+        /* Contact */
+        
+ .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px
+        }
+
+        
+ .info {
+            padding: 18px;
+            border-radius: 16px;
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        
+ .contact form {
+            display: grid;
+            gap: 12px
+        }
+
+        
+ .field {
+            display: grid;
+            gap: 6px
+        }
+
+        
+ label {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        
+ input,
+        textarea {
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: var(--bg-elev);
+            color: var(--text);
+            font: inherit
+        }
+
+        
+ input:focus,
+        textarea:focus {
+            outline: none;
+            box-shadow: var(--ring);
+            border-color: var(--brand)
+        }
+
+        
+ .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        
+
+ footer {
+            padding: 28px 0;
+            color: var(--muted);
+            border-top: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        
+
+
+        /* Responsive */
+        
+ @media (max-width: 980px) {
+            
+ .hero-grid {
+                grid-template-columns: 1fr
+            }
+
+            
+ .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            
+ .cards,
+            .testis {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            
+ .contact {
+                grid-template-columns: 1fr
+            }
+
+            
+
+        }
+
+        
+ @media (max-width: 640px) {
+            
+ h2.big {
+                font-size: 36px
+            }
+
+            
+ .grid {
+                grid-template-columns: 1fr
+            }
+
+            
+ .cards,
+            .testis {
+                grid-template-columns: 1fr
+            }
+
+            
+ .navlinks {
+                display: none
+            }
+
+            
+ .phone {
+                display: none
+            }
+
+            
+
+        }
+
+        
+
+
+
+        /* Animations */
+        
+ .fade-up {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity .6s ease, transform .6s ease
+        }
+
+        
+ .fade-up.show {
+            opacity: 1;
+            transform: none
+        }
+
+        
+
+    </style>
+
+</head>
+
+
+<body>
+ <header>
+ <div class="container nav">
+ <div class="logo">
+ <div class="logo-badge"
+                    aria-hidden="true"></div>
+ <h1>John • AI App Developer</h1>
+ </div>
+ <nav class="navlinks">
+
+                <a href="#about">About</a>
+ <a href="#skills">Skills</a>
+ <a href="#projects">Projects</a>
+ <a
+                    href="#services">Services</a>
+ <a href="#testimonials">Testimonials</a>
+ <a
+                    href="#contact">Contact</a>
+ </nav>
+ <div style="display:flex;gap:8px;align-items:center">
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+ <svg width="22"
+                        height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 3a9 9 0 1 0 9 9c0-.34-.02-.67-.05-1A7 7 0 0 1 12 3Z" />
+                    </svg>
+ </button>
+ <a class="btn" href="#contact">
+ <svg width="18" height="18"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 4h16v16H4z" opacity=".2" />
+                        <path d="M4 4h16v16H4z" />
+                        <path d="m22 6-10 7L2 6" />
+                    </svg>
+ Hire John
+ </a>
+ </div>
+ </div>
+ </header>
+
+ <main>
+ <section class="hero">
+ <div
+                class="container hero-grid">
+ <div>
+ <span class="eyebrow">AI-first Apps for Web • iOS •
+                        Android</span>
+ <h2 class="big">Hi, I'm <span class="grad">John</span>. I build
+                        production-grade apps powered by AI agents and chatbots.</h2>
+ <p class="subtitle">From idea
+                        to App Store and Play Store, I craft fast, accessible, and secure products that integrate LLMs,
+                        retrieval, tools, and analytics to deliver real user value.</p>
+ <div class="hero-cta">
+ <a
+                            class="btn" href="#projects">
+ <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 5v14" />
+                                <path d="m19 12-7 7-7-7" />
+                            </svg>
+ View Projects
+ </a>
+ <a class="btn btn-ghost" href="#contact">
+ <svg
+                                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path d="M21 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6" />
+                                <path d="m7 10 5 5 5-5" />
+                                <path d="M12 15V3" />
+                            </svg>
+ Get a Quote
+ </a>
+ </div>
+ <div class="stats">
+ <div class="stat">
+                            <strong>30+ </strong><span class="muted">apps shipped</span></div>
+ <div class="stat">
+                            <strong>99.9% </strong><span class="muted">uptime</span></div>
+ <div class="stat">
+                            <strong>2M+ </strong><span class="muted">bot messages</span></div>
+ </div>
+ </div>
+
+                <div class="hero-card">
+ <div class="grid">
+ <div>
+ <div class="chip">Realtime Chat</div>
+
+                            <div class="stack">
+ <span class="pill">React</span>
+ <span
+                                    class="pill">SwiftUI</span>
+ <span class="pill">Kotlin</span>
+ <span
+                                    class="pill">Node</span>
+ <span class="pill">Python</span>
+ </div>
+ <p
+                                class="section-desc" style="margin-top:10px">Composable agent and chatbot
+                                architectures with streaming, tools, and memory. Optimized for latency and safety.</p>
+
+                        </div>
+ <div>
+ <div class="chip">Edge + Cloud</div>
+ <ul style="margin:10px 0 0
+                                18px;color:var(--muted)">
+ <li>RAG + vector search</li>
+ <li>Function calling tools
+                                </li>
+ <li>Analytics & A/B testing</li>
+ </ul>
+ </div>
+ </div>
+ <div
+                        class="phone" aria-label="Chat UI mockup">
+ <div class="phone-notch"></div>
+ <div
+                            class="chat">
+ <div class="bubble ai">Hi! I'm your travel copilot. Where would you like
+                                to go?</div>
+ <div class="bubble user">Find a 3-day trip to Tokyo under $800.</div>
+
+                            <div class="bubble ai">Searching flights and stays... Found 3 options. Want the cheapest?
+                            </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section id="about"
+            class="fade-up">
+ <div class="container">
+ <div class="section-head">
+ <h3>About</h3>
+ <span
+                        class="chip">Available for freelance & full-time</span>
+ </div>
+ <p class="section-desc">
+                    I'm an end-to-end developer focused on AI-driven products. I design, build, and ship native iOS and
+                    Android apps and rich web experiences. My expertise is in integrating chatbots and autonomous agents
+                    with robust backends, observability, and privacy-first data pipelines.</p>
+ </div>
+ </section>
+
+
+        <section id="skills" class="fade-up">
+ <div class="container">
+ <div class="section-head">
+ <h3>
+                        Skills & Stack</h3>
+ <p class="section-desc">A pragmatic toolkit to deliver fast and reliable
+                        AI apps.</p>
+ </div>
+ <div class="cards">
+ <div class="card">
+ <h4>Frontend</h4>
+ <div
+                            class="list">
+ <span class="pill">React / Next.js</span>
+ <span
+                                class="pill">TypeScript</span>
+ <span class="pill">SwiftUI</span>
+ <span
+                                class="pill">Kotlin / Jetpack</span>
+ <span class="pill">Tailwind / CSS</span>
+
+                        </div>
+ </div>
+ <div class="card">
+ <h4>Backend</h4>
+ <div class="list">
+ <span
+                                class="pill">Node / Express</span>
+ <span class="pill">Python / FastAPI</span>
+
+                            <span class="pill">Postgres</span>
+ <span class="pill">Redis</span>
+ <span
+                                class="pill">gRPC / WebSockets</span>
+ </div>
+ </div>
+ <div class="card">
+ <h4>
+                            AI & Data</h4>
+ <div class="list">
+ <span class="pill">LLMs (OpenAI, local)</span>
+
+                            <span class="pill">RAG / Vectors</span>
+ <span class="pill">LangChain /
+                                LlamaIndex</span>
+ <span class="pill">Embeddings</span>
+ <span class="pill">Prompt
+                                & Eval</span>
+ </div>
+ </div>
+ <div class="card">
+ <h4>Cloud & DevOps</h4>
+ <div
+                            class="list">
+ <span class="pill">AWS / GCP</span>
+ <span
+                                class="pill">Docker</span>
+ <span class="pill">CI/CD</span>
+ <span
+                                class="pill">Edge / CDN</span>
+ <span class="pill">Terraform</span>
+ </div>
+
+                    </div>
+ <div class="card">
+ <h4>Product</h4>
+ <div class="list">
+ <span class="pill">UX
+                                Research</span>
+ <span class="pill">A/B Testing</span>
+ <span
+                                class="pill">Analytics</span>
+ <span class="pill">Security & Privacy</span>
+
+                        </div>
+ </div>
+ <div class="card">
+ <h4>Communication</h4>
+ <div class="list">
+ <span
+                                class="pill">Client-facing</span>
+ <span class="pill">Agile / Scrum</span>
+ <span
+                                class="pill">Docs & Diagrams</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+        
+
+ <section id="projects" class="fade-up">
+ <div class="container">
+ <div class="section-head">
+
+                    <h3>Highlighted Projects</h3>
+ <div class="filters" id="filters">
+ <button class="filter
+                            active" data-filter="all">All</button>
+ <button class="filter"
+                            data-filter="web">Web</button>
+ <button class="filter"
+                            data-filter="ios">iOS</button>
+ <button class="filter"
+                            data-filter="android">Android</button>
+ <button class="filter"
+                            data-filter="ai">AI</button>
+ <button class="filter"
+                            data-filter="chatbot">Chatbot</button>
+ <button class="filter"
+                            data-filter="agent">Agent</button>
+ </div>
+ </div>
+ <div class="grid"
+                    id="projectGrid">
+ <!-- Project 1 -->
+ <article class="project" data-tags="web ai chatbot">
+                        
+ <div class="thumb" aria-hidden="true">
+ <svg width="64" height="64" viewBox="0 0 24
+                                24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M8 12h8M12 8v8" />
+                            </svg>
+ </div>
+ <div class="content">
+ <h4>Support Copilot</h4>
+ <p
+                                class="section-desc">A web helpdesk with a GPT-powered assistant that drafts replies,
+                                auto-tags tickets, and learns from KB articles.</p>
+ <div class="tags"><span
+                                    class="tag">Next.js</span><span class="tag">RAG</span><span
+                                    class="tag">Chatbot</span></div>
+ </div>
+ <div class="actions">
+ <a
+                                class="link" href="#" aria-label="Live demo">Live</a>
+ <a class="link"
+                                href="#" aria-label="Source code">Code</a>
+ </div>
+ </article>
+
+                    <!-- Project 2 -->
+ <article class="project" data-tags="ios ai agent chatbot">
+ <div
+                            class="thumb">
+ <svg width="64" height="64" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <rect x="4" y="3" width="16" height="18" rx="3" />
+                                <path d="M8 7h8M8 11h8M8 15h5" />
+                            </svg>
+ </div>
+ <div class="content">
+ <h4>Personal Finance Agent</h4>
+ <p
+                                class="section-desc">iOS app that connects to banks, categorizes spending, and uses
+                                tool-calling agents to automate savings.</p>
+ <div class="tags"><span
+                                    class="tag">SwiftUI</span><span class="tag">Plaid</span><span
+                                    class="tag">Agents</span></div>
+ </div>
+ <div class="actions">
+ <a
+                                class="link" href="#">App Store</a>
+ <a class="link" href="#">Case Study</a>
+
+                        </div>
+ </article>
+ <!-- Project 3 -->
+ <article class="project" data-tags="android ai
+                        chatbot">
+ <div class="thumb">
+ <svg width="64" height="64" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 9h16v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9Z" />
+                                <path d="M8 9V7a4 4 0 0 1 8 0v2" />
+                            </svg>
+ </div>
+ <div class="content">
+ <h4>Wellness Chat</h4>
+ <p
+                                class="section-desc">Android app offering a privacy-first mental health chatbot with
+                                offline-first storage and weekly insights.</p>
+ <div class="tags"><span
+                                    class="tag">Kotlin</span><span class="tag">EdgeML</span><span
+                                    class="tag">Offline</span></div>
+ </div>
+ <div class="actions">
+ <a
+                                class="link" href="#">Play Store</a>
+ <a class="link" href="#">Case Study</a>
+
+                        </div>
+ </article>
+ <!-- Project 4 -->
+ <article class="project" data-tags="web ai
+                        agent">
+ <div class="thumb">
+ <svg width="64" height="64" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 12h18" />
+                                <path d="M12 3v18" />
+                            </svg>
+ </div>
+ <div class="content">
+ <h4>Sales Pipeline Agent</h4>
+ <p
+                                class="section-desc">Browser extension that enriches leads, drafts outreach, and syncs
+                                with CRM using secure agent tools.</p>
+ <div class="tags"><span
+                                    class="tag">Chrome</span><span class="tag">GraphQL</span><span
+                                    class="tag">Agents</span></div>
+ </div>
+ <div class="actions">
+ <a
+                                class="link" href="#">Demo</a>
+ <a class="link" href="#">Write-up</a>
+ </div>
+                        
+ </article>
+ <!-- Project 5 -->
+ <article class="project" data-tags="ios ai">
+ <div
+                            class="thumb">
+ <svg width="64" height="64" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M10 8h4v8h-4z" />
+                            </svg>
+ </div>
+ <div class="content">
+ <h4>Vision Note</h4>
+ <p
+                                class="section-desc">Camera-first iOS app that OCRs receipts and uses LLMs to extract
+                                line-items and tax categories.</p>
+ <div class="tags"><span
+                                    class="tag">Vision</span><span class="tag">CoreML</span><span
+                                    class="tag">Swift</span></div>
+ </div>
+ <div class="actions">
+ <a
+                                class="link" href="#">App Store</a>
+ <a class="link" href="#">Demo</a>
+ </div>
+                        
+ </article>
+ <!-- Project 6 -->
+ <article class="project" data-tags="android web ai
+                        chatbot">
+ <div class="thumb">
+ <svg width="64" height="64" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="3" />
+                                <path d="M7 12h10M12 7v10" />
+                            </svg>
+ </div>
+ <div class="content">
+ <h4>Education Tutor</h4>
+ <p
+                                class="section-desc">Cross-platform AI tutor with curriculum alignment, parent
+                                dashboard, and voice conversation.</p>
+ <div class="tags"><span class="tag">React
+                                    Native</span><span class="tag">Web</span><span class="tag">Voice</span></div>
+
+                        </div>
+ <div class="actions">
+ <a class="link" href="#">Live</a>
+ <a class="link"
+                                href="#">Docs</a>
+ </div>
+ </article>
+ </div>
+ </div>
+ </section>
+
+ <section
+            id="services" class="fade-up">
+ <div class="container">
+ <div class="section-head">
+ <h3>Services
+                    </h3>
+ <p class="section-desc">Roadmap-driven execution with clear milestones.</p>
+ </div>
+
+                <div class="cards">
+ <div class="card">
+ <h4>AI Product Discovery</h4>
+ <p
+                            class="section-desc">Workshops to map user needs to viable AI features, model selection,
+                            and risk assessment.</p>
+ <div class="list"><span class="pill">Requirements</span><span
+                                class="pill">Prototyping</span><span class="pill">Tech Spec</span></div>
+ </div>
+
+                    <div class="card">
+ <h4>Full-Stack Development</h4>
+ <p class="section-desc">Design,
+                            implement, and deploy end-to-end apps for web, iOS and Android.</p>
+ <div class="list">
+                            <span class="pill">CI/CD</span><span class="pill">Testing</span><span
+                                class="pill">Security</span></div>
+ </div>
+ <div class="card">
+ <h4>Agents &
+                            Chatbots</h4>
+ <p class="section-desc">Tool-calling agents, safe function execution, and
+                            multi-turn chat with memory and telemetry.</p>
+ <div class="list"><span
+                                class="pill">RAG</span><span class="pill">Tools</span><span
+                                class="pill">Observability</span></div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+
+        <section id="testimonials" class="fade-up">
+ <div class="container">
+ <div class="section-head">
+
+                    <h3>Testimonials</h3>
+ <p class="section-desc">What partners say about working with me.</p>
+
+                </div>
+ <div class="testis">
+ <div class="testi">
+ <p>John transformed our support workflow.
+                            Response time dropped 45% and customer CSAT hit an all‑time high.</p>
+ <div class="who">
+                            
+ <div class="logo-badge" style="width:28px;height:28px"></div>
+ <span>Head of CX,
+                                SaaS Co.</span>
+ </div>
+ </div>
+ <div class="testi">
+ <p>Rock-solid delivery. The
+                            finance agent shipped to TestFlight in 6 weeks with impeccable code quality.</p>
+ <div
+                            class="who">
+ <div class="logo-badge" style="width:28px;height:28px"></div>
+
+                            <span>Founder, Fintech</span>
+ </div>
+ </div>
+ <div class="testi">
+ <p>His Android app
+                            handles millions of messages monthly with near-zero downtime. Highly recommended.</p>
+ <div
+                            class="who">
+ <div class="logo-badge" style="width:28px;height:28px"></div>
+
+                            <span>CTO, HealthTech</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section
+            id="contact" class="fade-up">
+ <div class="container">
+ <div class="section-head">
+ <h3>Contact
+                    </h3>
+ <p class="section-desc">Have a project in mind? Let's make it real.</p>
+ </div>
+ <div
+                    class="contact">
+ <div class="info">
+ <h4>Direct</h4>
+ <p class="section-desc">Prefer email
+                            or a quick call? Reach me directly.</p>
+ <div
+                            style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+ <a class="btn"
+                                href="mailto:John@portfolioco.com">
+ <svg width="18" height="18" viewBox="0 0 24
+                                    24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M4 4h16v16H4z" opacity=".2" />
+                                    <path d="M4 4h16v16H4z" />
+                                    <path d="m22 6-10 7L2 6" />
+                                </svg>
+ John@portfolioco.com
+ </a>
+ <a class="btn btn-ghost"
+                                href="tel:+1987654321">
+ <svg width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.1 5.18 2 2 0 0 1 5.11 3h3a2
+                                        2 0 0 1 2 1.72c.12.9.31 1.78.57 2.63a2 2 0 0 1-.45 2.11L9 10a16 16 0 0 0 5
+                                        5l.54-1.23a2 2 0 0 1 2.11-.45c.85.26 1.73.45 2.63.57A2 2 0 0 1 22 16.92Z" />
+                                </svg>
+ +1 987 654 321
+ </a>
+ <button class="btn btn-ghost" id="copyEmail"
+                                data-copy="John@portfolioco.com">Copy Email</button>
+ <button class="btn btn-ghost"
+                                id="copyPhone" data-copy="+1987654321">Copy Phone</button>
+ </div>
+ <div
+                            id="copyToast" style="margin-top:10px;color:var(--accent);display:none">Copied to
+                            clipboard</div>
+ </div>
+ <form id="contactForm" novalidate>
+ <div class="row">
+ <div
+                                class="field">
+ <label for="name">Name</label>
+ <input id="name" name="name"
+                                    type="text" placeholder="Your name" required />
+ </div>
+ <div class="field">
+                                
+ <label for="email">Email</label>
+ <input id="email" name="email"
+                                    type="email" placeholder="you@example.com" required />
+ </div>
+ </div>
+ <div
+                            class="field">
+ <label for="company">Company</label>
+ <input id="company"
+                                name="company" type="text" placeholder="Company or project" />
+ </div>
+ <div
+                            class="field">
+ <label for="message">Project details</label>
+ <textarea id="message"
+                                name="message" rows="5" placeholder="What are you building?"
+                                required></textarea>
+ </div>
+ <div class="row">
+ <div class="field">
+ <label
+                                    for="platform">Platform</label>
+ <select id="platform" name="platform"
+                                    style="padding:12px
+                                    14px;border-radius:12px;background:var(--bg-elev);color:var(--text);border:1px solid
+                                    rgba(255,255,255,.12)">
+ <option>Web</option>
+ <option>iOS</option>
+ <option>
+                                        Android</option>
+ <option>Cross‑platform</option>
+ </select>
+ </div>
+ <div
+                                class="field">
+ <label for="budget">Budget</label>
+ <select id="budget"
+                                    name="budget" style="padding:12px
+                                    14px;border-radius:12px;background:var(--bg-elev);color:var(--text);border:1px solid
+                                    rgba(255,255,255,.12)">
+ <option>Under $10k</option>
+ <option>$10k – $25k
+                                    </option>
+ <option>$25k – $50k</option>
+ <option>$50k+</option>
+ </select>
+
+                            </div>
+ </div>
+ <button class="btn" type="submit">Send Message</button>
+ <div
+                            id="formMsg" style="margin-top:8px;font-size:14px"></div>
+ </form>
+ </div>
+ </div>
+
+        </section>
+ </main>
+
+ <footer>
+ <div class="container"
+            style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+ <div
+                style="display:flex;gap:10px;align-items:center">
+ <div class="logo-badge"
+                    style="width:28px;height:28px"></div>
+ <span>© <span id="year"></span> John • AI App
+                    Developer</span>
+ </div>
+ <div style="display:flex;gap:12px">
+ <a
+                    href="mailto:John@portfolioco.com">Email</a>
+ <a href="tel:+1987654321">Phone</a>
+ <a
+                    href="#" aria-label="LinkedIn">LinkedIn</a>
+ <a href="#" aria-label="GitHub">GitHub</a>
+
+            </div>
+ </div>
+ </footer>
+
+
+    <script>
+    // Theme toggle with persistence
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme){
+      root.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+      root.setAttribute('data-theme','light');
+    }
+    toggle.addEventListener('click',()=>{
+      const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', current);
+      localStorage.setItem('theme', current);
+    });
+
+    // Smooth fade-in on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); }});
+    },{threshold:.12});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+    // Project filters
+    const grid = document.getElementById('projectGrid');
+    const filterBtns = Array.from(document.querySelectorAll('.filter'));
+    filterBtns.forEach(btn=>btn.addEventListener('click',()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const tag = btn.dataset.filter;
+      grid.querySelectorAll('.project').forEach(card=>{
+        const tags = card.dataset.tags.split(' ');
+        const show = tag === 'all' || tags.includes(tag);
+        card.style.display = show ? 'flex' : 'none';
+      });
+    }));
+
+    // Contact form handling (demo only)
+    const form = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      formMsg.textContent = '';
+      const data = Object.fromEntries(new FormData(form).entries());
+      if(!data.name || !data.email || !data.message){
+        formMsg.style.color = 'var(--warning)';
+        formMsg.textContent = 'Please fill in required fields.';
+        return;
+      }
+      formMsg.style.color = 'var(--accent)';
+      formMsg.textContent = 'Thanks! I\'ll get back to you at ' + data.email + ' shortly.';
+      form.reset();
+    });
+
+    // Clipboard helpers
+    function bindCopy(id){
+      const el = document.getElementById(id);
+      const toast = document.getElementById('copyToast');
+      el.addEventListener('click', async ()=>{
+        try{
+          await navigator.clipboard.writeText(el.dataset.copy);
+          toast.style.display = 'block';
+          toast.textContent = 'Copied: ' + el.dataset.copy;
+          setTimeout(()=> toast.style.display = 'none', 1600);
+        }catch(err){
+          toast.style.display = 'block';
+          toast.style.color = 'var(--danger)';
+          toast.textContent = 'Copy failed';
+          setTimeout(()=> toast.style.display = 'none', 1600);
+        }
+      });
+    }
+    bindCopy('copyEmail');
+    bindCopy('copyPhone');
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+    
+
+</body>
+
+
+</html>
