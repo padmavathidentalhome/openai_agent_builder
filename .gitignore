@@ -8,3 +8,4 @@
 
 # Other
 *.lock
+.venv/
